@@ -1,26 +1,30 @@
-# --- Core Data Handling & Processing ---
+# Core Data Handling & Processing
 # Used for loading, validating, enriching, and manipulating the data.
 pandas
 numpy
 tqdm # For progress bars during long operations
 
-# --- Database & Vector Store Clients ---
+# Database & Vector Store Clients
 # For connecting to PostgreSQL and Pinecone.
 sqlalchemy
 psycopg2-binary # PostgreSQL driver for SQLAlchemy
 pinecone
 
-# --- Environment & Configuration ---
+# Environment & Configuration
 # For loading API keys and settings from the .env file.
 python-dotenv
 
-# --- AI & Machine Learning ---
+# AI & Machine Learning
 # For creating vector embeddings and interacting with LLMs.
 sentence-transformers
 langchain-community
 langchain-ollama # For running Llama 3 locally
 langchain # Core LangChain library for orchestration and tools
 
-# --- Web Application & UI ---
+# Web Application & UI
 # For creating the user interface.
 streamlit
+
+# Routing and Backend
+# Backend wrapper
+fastapi[all]

@@ -1,0 +1,76 @@
+{
+    "description": "Emission factors for ESG reporting calculations. Based on eGRID 2023 data.",
+    "version": "1.0.0",
+    "last_updated": "2024-01-15",
+    
+    "grid_emission_factors_kg_CO2_per_kWh": {
+        "US_DEFAULT": 0.386,
+        "US_CA": 0.230,
+        "US_West": 0.280,
+        "US_TX": 0.390,
+        "US_NY": 0.250,
+        "US_Midwest": 0.450,
+        "US_South": 0.420,
+        "US_Northeast": 0.260,
+        "EU_DEFAULT": 0.276,
+        "UK": 0.233,
+        "GLOBAL_DEFAULT": 0.500
+    },
+    
+    "scope2_emission_sources": {
+        "purchased_electricity": {
+            "category": "Scope 2 - Location-based",
+            "conversion_factor": "grid_emission_factor"
+        },
+        "purchased_steam": {
+            "kg_CO2_per_unit": 66.4,
+            "unit": "kg_CO2 per MMBtu"
+        },
+        "purchased_heating": {
+            "kg_CO2_per_unit": 53.1,
+            "unit": "kg_CO2 per MMBtu"
+        },
+        "purchased_cooling": {
+            "kg_CO2_per_unit": 132.0,
+            "unit": "kg_CO2 per MMBtu"
+        }
+    },
+    
+    "scope3_categories": {
+        "1": {"name": "Purchased Goods", "default_pct": 0.15},
+        "2": {"name": "Capital Goods", "default_pct": 0.08},
+        "3": {"name": "Fuel & Energy", "default_pct": 0.12},
+        "4": {"name": "Upstream Transport", "default_pct": 0.10},
+        "5": {"name": "Waste", "default_pct": 0.03},
+        "6": {"name": "Business Travel", "default_pct": 0.05},
+        "7": {"name": "Employee Commuting", "default_pct": 0.04},
+        "8": {"name": "Upstream Leasing", "default_pct": 0.02},
+        "9": {"name": "Downstream Transport", "default_pct": 0.08},
+        "10": {"name": "Processing Sold Products", "default_pct": 0.05},
+        "11": {"name": "Use Sold Products", "default_pct": 0.15},
+        "12": {"name": "End-of-Life", "default_pct": 0.06},
+        "13": {"name": "Downstream Leasing", "default_pct": 0.04},
+        "14": {"name": "Franchises", "default_pct": 0.02},
+        "15": {"name": "Investments", "default_pct": 0.01}
+    },
+    
+    "simulation_parameters": {
+        "quarterly_variation_std": 0.10,
+        "supplier_variation_std": 0.15,
+        "dirichlet_alpha": 1.0,
+        "min_quarterly_pct": 0.15,
+        "max_quarterly_pct": 0.35,
+        "energy_mix_variation_std": 0.05,
+        "employee_count_multiplier": 1.0,
+        "employee_count_base": 1000
+    },
+    
+    "deviation_thresholds": {
+        "scope1_warning_pct": 5.0,
+        "scope1_critical_pct": 15.0,
+        "scope2_warning_pct": 5.0,
+        "scope2_critical_pct": 15.0,
+        "scope3_warning_pct": 10.0,
+        "scope3_critical_pct": 25.0
+    }
+}

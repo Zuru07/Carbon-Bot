@@ -187,20 +187,3 @@ pytest tests/test_sustainability_agent.py
 # Run with coverage
 pytest --cov=backend --cov-report=html
 ```
-
-## Linting
-
-```bash
-# Format code
-black backend/ frontend/
-
-# Lint
-ruff check backend/
-
-# Type check
-mypy backend/
-```
-
-## License
-
-MIT
